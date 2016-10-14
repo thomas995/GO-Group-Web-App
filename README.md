@@ -12,4 +12,6 @@ The main aim is for the Tradesman to have to do the minimal amount of work to us
 
 
 ##References:
-Database setup info and how to use: http://try.redis.io/
+Database setup info and how to use: http://try.redis.io/ 
+Got version 2.8.19 of Redis from: https://github.com/MSOPENTECH/redis/releases?after=win-2.8.2101
+Redis setup video: https://www.youtube.com/watch?v=Pdapt2PFidE
