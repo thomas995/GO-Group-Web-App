@@ -15,3 +15,7 @@ The main aim is for the Tradesman to have to do the minimal amount of work to us
   Redis setup video: https://www.youtube.com/watch?v=Pdapt2PFidE
 
   Setting up GO Path: http://www.wadewegner.com/2014/12/easy-go-programming-setup-for-windows/
+  
+  Dropdown List https://www.socketloop.com/tutorials/golang-populate-dropdown-with-html-template-example
+
+  Bootstrap Template: http://getbootstrap.com/examples/jumbotron/#
