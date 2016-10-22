@@ -1,6 +1,6 @@
 # GO-Group-Web-App
 
-## Work Tracker (Working Title)
+## Work Tracker
 
 # Description
 This project will be using GO programming language to create a Web Application that tracks the amount of work done by specific Tradesmen. For Example, if I was a farmer and I wanted to tell my boss the amount of work I had done and details about that work I would use this application to login with my personal details, pick my job from a dropdown list and a few other specific details and then I will enter the details into a textbox and submit it to my boss. All work done would be tracked on my specific account and the same goes for other accounts.
