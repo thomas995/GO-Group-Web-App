@@ -4,6 +4,8 @@ package main
          "net/http"
  )
 
+ import "gopkg.in/macaron.v1"
+
 /* Dropdown list with Tradesperson's job titles
  adapted from https://www.socketloop.com/tutorials/golang-populate-dropdown-with-html-template-example */
  func SimpleSelectTag(w http.ResponseWriter, r *http.Request) {
@@ -28,9 +30,7 @@ package main
    <option value="Tiler">Tiler</option>
    <option value="Transport">Transport</option>
    <option value="Other">Other</option>
-
  </select>
-
  </body>
  </html>`
 
@@ -41,5 +41,7 @@ package main
          mux := http.NewServeMux()
          mux.HandleFunc("/", SimpleSelectTag)
 
-         http.ListenAndServe(":8080", mux)
+        m := macaron.Classic()
+        m.Use(macaron.Renderer())
+        http.ListenAndServe(":8080", mux)
  }
