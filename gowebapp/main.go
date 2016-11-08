@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	port := flag.Int("port", 80, "port to serve on")
+	port := flag.Int("port", 8080, "port to serve on")
 	dir := flag.String("directory", "web/", "directory of web files")
 	flag.Parse()
 
