@@ -79,8 +79,8 @@
 <!-- Code adapted from http://www.w3schools.com/html/html_form_elements.asp -->
         <div class="col-md-4">
           <h2>Hours Worked This Week</h2>
-          <select name="HoursWorker">
-  <option value=">10 hours">>10 Hours</option>
+          <select name="HoursWorked">
+  <option value="Less than 10 hours">Less than 10 Hours</option>
   <option value="10-15">10-15 Hours</option>
   <option value="15-20">15-20 Hours</option>
   <option value="25-30">25-30 Hours</option>
@@ -96,7 +96,17 @@
           <!--Adapted from http://www.w3schools.com/tags/tag_input.asp-->
           <form action="demo_form.asp">
               <input type="text" name="AddInfo" value=""><br>
-              <input type="submit" value="Submit">
+              <!--<input type="submit" value="Submit"> -->
+              <button onclick="sendFunction()">Send Form</button>
+    
+<script>
+function sendFunction() 
+{
+    alert("Thank you for sending us your details!");   
+}
+</script>    
+    
+<button onclick="clearFunction()">Clear</button>    
 </form><p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
