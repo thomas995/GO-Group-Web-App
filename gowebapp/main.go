@@ -106,12 +106,8 @@ const indexPage = `
           <a class="navbar-brand" href="#">Work Tracker</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-<<<<<<< HEAD
         <small>User: jjj</small>
         <form method="post" action="/login">
-=======
-              <form method="post" action="/login">
->>>>>>> origin/master
     <input type="text" placeholder="Name" id="name" name="name">
     <input type="password" placeholder="Password" id="password" name="password">
     <button type="submit" class="btn btn-success">Login</button>
@@ -131,12 +127,6 @@ const internalPage = `
 <h1>Internal</h1>
 <hr>
 <small>User: %s</small>
-<<<<<<< HEAD
-=======
-<form method="post" action="/logout">
-    <button type="submit">Logout</button>
-</form>
->>>>>>> origin/master
 <html ng-app> <!-- 'ng-app'' placed within a tag (in this case, the HTML tag)
 				allows HTML to become the route element for AngularJS.
 				All AngularJS applications must have a root element. Only one instance allowed. --> 
@@ -169,28 +159,15 @@ const internalPage = `
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-<<<<<<< HEAD
                      <form method="post" action="/logout">
     <button type="submit" class="btn btn-success">Logout</button>
-=======
->>>>>>> origin/master
           </button>
           <a class="navbar-brand" href="#">Work Tracker</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
-<<<<<<< HEAD
   
 </form>
-=======
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
->>>>>>> origin/master
           </form>
         </div><!--/.navbar-collapse -->
       </div>

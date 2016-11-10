@@ -19,3 +19,7 @@ The main aim is for the Tradesman to have to do the minimal amount of work to us
   Dropdown List: https://www.socketloop.com/tutorials/golang-populate-dropdown-with-html-template-example
 
   Bootstrap Template: http://getbootstrap.com/examples/jumbotron/#
+  
+  Angular tutorial: https://github.com/jakecoffman/go-angular-tutorial
+  
+  Login/Logout function: https://mschoebel.info/2014/03/09/snippet-golang-webapp-login-logout/
