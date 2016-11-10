@@ -22,7 +22,7 @@ func getUserName(request *http.Request) (userName string) {
 	if cookie, err := request.Cookie("session"); err == nil {
 		cookieValue := make(map[string]string)
 		if err = cookieHandler.Decode("session", cookie.Value, &cookieValue); err == nil {
-			userName = cookieValue["name"]
+			userName = cookieValue["email"]
 		}
 	}
 	return userName
@@ -31,7 +31,7 @@ func getUserName(request *http.Request) (userName string) {
 //Saves username in map then encodes with value map and stores that in a cookie
 func setSession(userName string, response http.ResponseWriter) {
 	value := map[string]string{
-		"name": userName,
+		"email": userName,
 	}
 	if encoded, err := cookieHandler.Encode("session", value); err == nil {
 		cookie := &http.Cookie{
@@ -57,12 +57,12 @@ func clearSession(response http.ResponseWriter) {
 // login handler handles the login for stored users
 
 func loginHandler(response http.ResponseWriter, request *http.Request) {
-	name := request.FormValue("name")
+	email := request.FormValue("email")
 	pass := request.FormValue("password")
 	redirectTarget := "/"
-	if name != "" && pass != "" {
+	if email != "" && pass != "" {
 		// .. check credentials ..
-		setSession(name, response)
+		setSession(email, response)
 		redirectTarget = "/internal"
 	}
 	http.Redirect(response, request, redirectTarget, 302)
@@ -106,9 +106,9 @@ const indexPage = `
           <a class="navbar-brand" href="#">Work Tracker</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-        <small>User: jjj</small>
+
         <form method="post" action="/login">
-    <input type="text" placeholder="Name" id="name" name="name">
+    <input type="email" placeholder="Enter your email" id="email" name="email">
     <input type="password" placeholder="Password" id="password" name="password">
     <button type="submit" class="btn btn-success">Login</button>
 </form>    
@@ -139,9 +139,9 @@ const internalPage = `
 <body>
 	<!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <!--Changed the top header here to include a name being entered and shown back to the user with a friendly hello-->
+      <!--Changed the top header here to include an email being entered and shown back to the user with a friendly hello-->
       <div class="container">
-        <h2><input type="text" placeholder="Your Name here" ng-model="yes"></h2>
+        <h2><input type="text" placeholder="Your Email here" ng-model="yes"></h2>
 		      <h3><p>Hello <span ng-bind="yes"></span></p></h3>
         <p>This is a place where you can record all of your daily duties in one place, ready to show the boss. </p>
       </div>
@@ -205,7 +205,7 @@ const internalPage = `
 <!-- Code adapted from http://www.w3schools.com/html/html_form_elements.asp -->
         <div class="col-md-4">
           <h2>Hours Worked This Week</h2>
-          <select name="HoursWorker">
+          <select name="HoursWorked">
   <option value=">10 hours">>10 Hours</option>
   <option value="10-15">10-15 Hours</option>
   <option value="15-20">15-20 Hours</option>
