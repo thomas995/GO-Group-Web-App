@@ -81,7 +81,6 @@ func logoutHandler(response http.ResponseWriter, request *http.Request) {
 
 const indexPage = `
 <!-- Incorporating some HTML -->
-<h1>Login</h1>
 <head>
 <!-- Nav bar -->
 <form class="navbar-form navbar-left">
@@ -124,7 +123,7 @@ func indexPageHandler(response http.ResponseWriter, request *http.Request) {
 // internal page contains code for the page user will see once successfully logged in
 
 const internalPage = `
-<h1>Internal</h1>
+<h1>-</h1>
 <hr>
 <small>User: %s</small>
 <html ng-app> <!-- 'ng-app'' placed within a tag (in this case, the HTML tag)
@@ -139,9 +138,9 @@ const internalPage = `
 <body>
 	<!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <!--Changed the top header here to include an email being entered and shown back to the user with a friendly hello-->
+      <!--Changed the top header here to include a name being entered and shown back to the user with a friendly hello-->
       <div class="container">
-        <h2><input type="text" placeholder="Your Email here" ng-model="yes"></h2>
+        <h2><input type="text" placeholder="Your Name here" ng-model="yes"></h2>
 		      <h3><p>Hello <span ng-bind="yes"></span></p></h3>
         <p>This is a place where you can record all of your daily duties in one place, ready to show the boss. </p>
       </div>
