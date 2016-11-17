@@ -197,10 +197,15 @@ const internalPage = `
     <option value="Tiler">Tiler</option>
     <option value="Transport">Transport</option>
     <option value="Other">Other</option>
- 
+ <!-- Code adapted from http://stackoverflow.com/questions/30717105/adding-view-details-button-with-js -->
   </select>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+          <details>
+    <summary>View Details</summary>
+    <p>
+        Please select your correct job title here from the dropdown list.
+    </p>
+</details>
+</div>
 <!-- Code adapted from http://www.w3schools.com/html/html_form_elements.asp -->
         <div class="col-md-4">
           <h2>Hours Worked This Week</h2>
@@ -213,7 +218,12 @@ const internalPage = `
   <option value="40+">40+ Hours</option>
 
 </select>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <details>
+    <summary>View Details</summary>
+    <p>
+        Please select the correct amount of hours you worked this week.
+    </p>
+</details>
        </div>
        
         <div class="col-md-4">
@@ -222,7 +232,13 @@ const internalPage = `
           <form action="demo_form.asp">
               <input type="text" name="AddInfo" value=""><br>
               <input type="submit" value="Submit">
-</form><p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+</form>
+<details>
+    <summary>View Details</summary>
+    <p>
+        Please add any additional information that you feel is relevent for your boss to know about regarding this week's work.
+    </p>
+</details>
         </div>
       </div>
 
