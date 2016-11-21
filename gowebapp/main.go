@@ -22,7 +22,7 @@ func getUserName(request *http.Request) (userName string) {
 	if cookie, err := request.Cookie("session"); err == nil {
 		cookieValue := make(map[string]string)
 		if err = cookieHandler.Decode("session", cookie.Value, &cookieValue); err == nil {
-			userName = cookieValue["name"]
+			userName = cookieValue["email"]
 		}
 	}
 	return userName
@@ -31,7 +31,7 @@ func getUserName(request *http.Request) (userName string) {
 //Saves username in map then encodes with value map and stores that in a cookie
 func setSession(userName string, response http.ResponseWriter) {
 	value := map[string]string{
-		"name": userName,
+		"email": userName,
 	}
 	if encoded, err := cookieHandler.Encode("session", value); err == nil {
 		cookie := &http.Cookie{
@@ -57,12 +57,12 @@ func clearSession(response http.ResponseWriter) {
 // login handler handles the login for stored users
 
 func loginHandler(response http.ResponseWriter, request *http.Request) {
-	name := request.FormValue("name")
+	email := request.FormValue("email")
 	pass := request.FormValue("password")
 	redirectTarget := "/"
-	if name != "" && pass != "" {
+	if email != "" && pass != "" {
 		// .. check credentials ..
-		setSession(name, response)
+		setSession(email, response)
 		redirectTarget = "/internal"
 	}
 	http.Redirect(response, request, redirectTarget, 302)
@@ -81,7 +81,6 @@ func logoutHandler(response http.ResponseWriter, request *http.Request) {
 
 const indexPage = `
 <!-- Incorporating some HTML -->
-<h1>Login</h1>
 <head>
 <!-- Nav bar -->
 <form class="navbar-form navbar-left">
@@ -106,9 +105,9 @@ const indexPage = `
           <a class="navbar-brand" href="#">Work Tracker</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-        <small>User: jjj</small>
+
         <form method="post" action="/login">
-    <input type="text" placeholder="Name" id="name" name="name">
+    <input type="email" placeholder="Enter your email" id="email" name="email">
     <input type="password" placeholder="Password" id="password" name="password">
     <button type="submit" class="btn btn-success">Login</button>
 </form>    
@@ -124,7 +123,7 @@ func indexPageHandler(response http.ResponseWriter, request *http.Request) {
 // internal page contains code for the page user will see once successfully logged in
 
 const internalPage = `
-<h1>Internal</h1>
+<h1>-</h1>
 <hr>
 <small>User: %s</small>
 <html ng-app> <!-- 'ng-app'' placed within a tag (in this case, the HTML tag)
@@ -198,14 +197,19 @@ const internalPage = `
     <option value="Tiler">Tiler</option>
     <option value="Transport">Transport</option>
     <option value="Other">Other</option>
- 
+ <!-- Code adapted from http://stackoverflow.com/questions/30717105/adding-view-details-button-with-js -->
   </select>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+          <details>
+    <summary>View Details</summary>
+    <p>
+        Please select your correct job title here from the dropdown list.
+    </p>
+</details>
+</div>
 <!-- Code adapted from http://www.w3schools.com/html/html_form_elements.asp -->
         <div class="col-md-4">
           <h2>Hours Worked This Week</h2>
-          <select name="HoursWorker">
+          <select name="HoursWorked">
   <option value=">10 hours">>10 Hours</option>
   <option value="10-15">10-15 Hours</option>
   <option value="15-20">15-20 Hours</option>
@@ -214,7 +218,12 @@ const internalPage = `
   <option value="40+">40+ Hours</option>
 
 </select>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <details>
+    <summary>View Details</summary>
+    <p>
+        Please select the correct amount of hours you worked this week.
+    </p>
+</details>
        </div>
        
         <div class="col-md-4">
@@ -223,7 +232,13 @@ const internalPage = `
           <form action="demo_form.asp">
               <input type="text" name="AddInfo" value=""><br>
               <input type="submit" value="Submit">
-</form><p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+</form>
+<details>
+    <summary>View Details</summary>
+    <p>
+        Please add any additional information that you feel is relevent for your boss to know about regarding this week's work.
+    </p>
+</details>
         </div>
       </div>
 
