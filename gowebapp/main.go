@@ -81,6 +81,11 @@ func logoutHandler(response http.ResponseWriter, request *http.Request) {
 
 const indexPage = `
 <!-- Incorporating some HTML -->
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+=======
+>>>>>>> origin/master
 <head>
 <!-- Nav bar -->
 <form class="navbar-form navbar-left">
@@ -92,7 +97,6 @@ const indexPage = `
 <div class="container">
 		
 	</div>
-
 	<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -105,7 +109,10 @@ const indexPage = `
           <a class="navbar-brand" href="#">Work Tracker</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
         <form method="post" action="/login">
     <input type="email" placeholder="Enter your email" id="email" name="email">
     <input type="password" placeholder="Password" id="password" name="password">
@@ -133,8 +140,18 @@ const internalPage = `
 	<title>WorkTracker</title>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--Adapted from: https://www.sitepoint.com/ -->
+  <script language="javascript">
+		function Calculate()
+		{
+			var h = document.getElementById('hoursWorked').value;
+			var t = document.getElementById('hourlyPay').value;
+			var result = h * t;
+			document.getElementById('lblRes').innerHTML = result;
+		}
+	</script>
 </head>
-
 <body>
 	<!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -145,11 +162,9 @@ const internalPage = `
         <p>This is a place where you can record all of your daily duties in one place, ready to show the boss. </p>
       </div>
     </div>
-
 	<div class="container">
 		
 	</div>
-
 	<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -171,7 +186,6 @@ const internalPage = `
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
 	<div class="container">
       <!-- Example row of columns -->
       <div class="row">
@@ -206,6 +220,67 @@ const internalPage = `
     </p>
 </details>
 </div>
+<<<<<<< HEAD
+
+<!-- Code adapted from http://www.w3schools.com/html/html_form_elements.asp -->
+  <div class="col-md-4">
+     <h2>Hours Worked This Week</h2>
+  <select Id="hoursWorked" onChange="Calculate();">
+			  <option value=10>10</option>
+			  <option value=11>11</option>
+			  <option value=12>12</option>
+			  <option value=13>13</option>
+			  <option value=14>14</option>
+			  <option value=15>15</option>
+			  <option value=16>16</option>
+			  <option value=17>17</option>
+			  <option value=18>18</option>
+			  <option value=19>19</option>
+			  <option value=20>20</option>
+			  <option value=21>21</option>
+			  <option value=22>22</option>
+			  <option value=23>23</option>
+			  <option value=24>24</option>
+			  <option value=25>25</option>
+			  <option value=26>26</option>
+			  <option value=27>27</option>
+			  <option value=28>28</option>
+			  <option value=29>29</option>
+			  <option value=30>30</option>
+			  <option value=31>31</option>
+			  <option value=32>32</option>
+			  <option value=33>33</option>
+			  <option value=34>34</option>
+			  <option value=35>35</option>
+			  <option value=36>36</option>
+			  <option value=37>37</option>
+			  <option value=38>38</option>
+			  <option value=39>39</option>
+			  <option value=40>40</option>
+
+			</select>
+			  &nbsp;&nbsp;
+			* &nbsp;
+			Hourly Pay:
+			<select Id="hourlyPay" onChange="Calculate();">
+			  <option value=6.24>6.24</option>
+			  <option value=7.25>7.25</option>
+			  <option value=9.15>9.15</option>
+			  <option value=11.25>11.25</option>
+			  <option value=20.83>20.83</option>
+			</select>
+			&nbsp;&nbsp;
+			
+			= Total:&nbsp;&nbsp;
+			<label id="lblRes"> <!-- result of Calculating hoursWorked * hourlyPay -->
+			 100
+			</label>
+          <details>
+    <summary>View Details</summary>
+    <p>
+        Please select the correct amount of hours you worked this week. 
+        <br> Please note: In order to use this site you have to be working a minimum of 10 hours a week and a maximum of 40 hours. </br>
+=======
 <!-- Code adapted from http://www.w3schools.com/html/html_form_elements.asp -->
         <div class="col-md-4">
           <h2>Hours Worked This Week</h2>
@@ -222,10 +297,11 @@ const internalPage = `
     <summary>View Details</summary>
     <p>
         Please select the correct amount of hours you worked this week.
+>>>>>>> origin/master
     </p>
 </details>
        </div>
-       
+
         <div class="col-md-4">
           <h2>Additonal Information</h2>
           <!--Adapted from http://www.w3schools.com/tags/tag_input.asp-->
@@ -241,18 +317,14 @@ const internalPage = `
 </details>
         </div>
       </div>
-
 	  <hr>
-
       <footer>
         <p>&copy; 2016 WorkTracker, Inc.</p>
       </footer>
     </div> <!-- /container -->
-
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
 </body>
 </html>
-
 `
 
 
