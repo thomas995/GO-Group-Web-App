@@ -2,7 +2,6 @@
 
 :: Batch file for
 :: Go Group Project at GMIT 2016
-:: Author: Alanna Curran
 :: Date:    Nov 17, 2016
 :: Adapted from: Murach's ADO.NET 4 with Visual Basic 2010
 :: 
