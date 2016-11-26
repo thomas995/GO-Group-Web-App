@@ -81,11 +81,8 @@ func logoutHandler(response http.ResponseWriter, request *http.Request) {
 
 const indexPage = `
 <!-- Incorporating some HTML -->
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-=======
->>>>>>> origin/master
 <head>
 <!-- Nav bar -->
 <form class="navbar-form navbar-left">
@@ -109,10 +106,6 @@ const indexPage = `
           <a class="navbar-brand" href="#">Work Tracker</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
         <form method="post" action="/login">
     <input type="email" placeholder="Enter your email" id="email" name="email">
     <input type="password" placeholder="Password" id="password" name="password">
@@ -220,7 +213,6 @@ const internalPage = `
     </p>
 </details>
 </div>
-<<<<<<< HEAD
 
 <!-- Code adapted from http://www.w3schools.com/html/html_form_elements.asp -->
   <div class="col-md-4">
@@ -280,25 +272,8 @@ const internalPage = `
     <p>
         Please select the correct amount of hours you worked this week. 
         <br> Please note: In order to use this site you have to be working a minimum of 10 hours a week and a maximum of 40 hours. </br>
-=======
-<!-- Code adapted from http://www.w3schools.com/html/html_form_elements.asp -->
-        <div class="col-md-4">
-          <h2>Hours Worked This Week</h2>
-          <select name="HoursWorked">
-  <option value=">10 hours">>10 Hours</option>
-  <option value="10-15">10-15 Hours</option>
-  <option value="15-20">15-20 Hours</option>
-  <option value="25-30">25-30 Hours</option>
-  <option value="30-40">30-40 Hours</option>
-  <option value="40+">40+ Hours</option>
 
-</select>
-          <details>
-    <summary>View Details</summary>
-    <p>
-        Please select the correct amount of hours you worked this week.
->>>>>>> origin/master
-    </p>
+          </p>
 </details>
        </div>
 
@@ -317,6 +292,9 @@ const internalPage = `
 </details>
         </div>
       </div>
+
+
+
 	  <hr>
       <footer>
         <p>&copy; 2016 WorkTracker, Inc.</p>

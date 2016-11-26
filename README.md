@@ -23,3 +23,5 @@ The main aim is for the Tradesman to have to do the minimal amount of work to us
   Angular tutorial: https://github.com/jakecoffman/go-angular-tutorial
   
   Login/Logout function: https://mschoebel.info/2014/03/09/snippet-golang-webapp-login-logout/
+  
+  Calculating Hourly Pay: https://www.sitepoint.com/
