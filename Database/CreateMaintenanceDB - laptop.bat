@@ -9,7 +9,7 @@
 :: the Employee database.
 
 ECHO Attempting to create the Maintenance database . . . 
-sqlcmd -S localhost\SQLExpress -E /i CreateEmployeeDB.sql
+sqlcmd -S localhost\SQLExpress -E /i CreateGoGroupDB.sql
 ECHO.
 ECHO If no error message is shown, then the database was created successfully.
 ECHO.
