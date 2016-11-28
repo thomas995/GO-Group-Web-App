@@ -318,6 +318,26 @@ func internalPageHandler(response http.ResponseWriter, request *http.Request) {
 	}
 }
 
+func sendEmail(body string, to string) {
+    from := "workforcegroupproject@gmail.com"
+    password := "GoGroup2016!"
+
+    msg := "From: " + from + "\r\n" +
+           "To: " + to + "\r\n" + 
+           "Subject: Your messages subject" + "\r\n\r\n" +
+           body + "\r\n"
+		   
+	err := smtp.SendMail("smtp.gmail.com:587", smtp.PlainAuth("", from, password, "smtp.gmail.com"), from, []string{to}, []byte(msg))
+    if err != nil {
+        log.Printf("Error: %s", err)
+        return
+    }
+
+    log.Print("message sent")
+
+}
+
+
 // server main method which handles all the port hosting and http methods
 
 var router = mux.NewRouter()
