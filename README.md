@@ -1,5 +1,7 @@
 # GO-Group-Web-App
 
+# IMPORTANT: GO TO WIKI SECTION TO GET DETAILS ON USER GUIDE/HOW CODE IS STRUCTURED/DETAILED ANALYSIS
+
 ## Work Tracker
 
 # Description
@@ -10,6 +12,7 @@ The main aim is for the Tradesman to have to do the minimal amount of work to us
 Go to the wiki section for more info on how to use this app.
 
 ##References:
+See the code files for more references
   Database setup info and how to use: http://try.redis.io/
 
   Got version 2.8.19 of Redis from: https://github.com/MSOPENTECH/redis/releases?after=win-2.8.2101
