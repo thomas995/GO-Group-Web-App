@@ -25,3 +25,5 @@ Go to the wiki section for more info on how to use this app.
   Angular tutorial: https://github.com/jakecoffman/go-angular-tutorial
   
   Login/Logout function: https://mschoebel.info/2014/03/09/snippet-golang-webapp-login-logout/
+  
+  Calculating Hourly Pay: https://www.sitepoint.com/
