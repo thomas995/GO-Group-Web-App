@@ -8,6 +8,8 @@ import (
 	"fmt"
 	//"log" // It defines a type, Logger, with methods for formatting output. 
 	"net/http"
+	"net/smtp" //- For sending emails. Adapted from https://github.com/golang/go/wiki/SendingMail
+	"log" //- For sending emails. Adapted from https://dinosaurscode.xyz/go/2016/06/21/sending-email-using-golang/
 	"github.com/gorilla/mux" //need to type "go get github.com/gorilla/mux" into cmder to use (without the quotations obviously)
 	"github.com/gorilla/securecookie" //need to type "github.com/gorilla/securecookie" into cmder to use (without the quotations obviously)
 )
