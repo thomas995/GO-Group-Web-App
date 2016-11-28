@@ -1,3 +1,6 @@
+// Adapted from: https://github.com/jakecoffman/go-angular-tutorial
+// Adapted from: https://mschoebel.info/2014/03/09/snippet-golang-webapp-login-logout/
+// Info gathered from w3Schools and https://golang.org
 //https://dinosaurscode.xyz/go/2016/06/19/golang-mysql-authentication/
 
 package main
@@ -9,8 +12,52 @@ import "golang.org/x/crypto/bcrypt"
 
 import "net/http"
 
+import "github.com/gorilla/securecookie"
+
 var db *sql.DB
 var err error
+
+// cookies are handled here
+
+var cookieHandler = securecookie.New(
+	securecookie.GenerateRandomKey(64),
+	securecookie.GenerateRandomKey(32))
+//Reading cookies for username
+func getUserName(request *http.Request) (userName string) {
+	if cookie, err := request.Cookie("session"); err == nil {
+		cookieValue := make(map[string]string)
+		if err = cookieHandler.Decode("session", cookie.Value, &cookieValue); err == nil {
+			userName = cookieValue["email"]
+		}
+	}
+	return userName
+}
+
+//Saves username in map then encodes with value map and stores that in a cookie
+func setSession(userName string, response http.ResponseWriter) {
+	value := map[string]string{
+		"email": userName,
+	}
+	if encoded, err := cookieHandler.Encode("session", value); err == nil {
+		cookie := &http.Cookie{
+			Name:  "session",
+			Value: encoded,
+			Path:  "/",
+		}
+		http.SetCookie(response, cookie)
+	}
+}
+
+//Returns to indexPage and clears cookies
+func clearSession(response http.ResponseWriter) {
+	cookie := &http.Cookie{
+		Name:   "session",
+		Value:  "",
+		Path:   "/",
+		MaxAge: -1,
+	}
+	http.SetCookie(response, cookie)
+}
 
 func signupPage(res http.ResponseWriter, req *http.Request) {
 	if req.Method != "POST" {
