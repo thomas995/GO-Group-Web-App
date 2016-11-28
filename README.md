@@ -10,6 +10,7 @@ This project will be using GO programming language to create a Web Application t
 The main aim is for the Tradesman to have to do the minimal amount of work to use this app as it shouldn't be a hassle to use (many tradesmen are not tech-savvy so we need to avoid confusion). The use of dropdown lists/radio buttons/forms should acheive this as opposed to data entry into textboxes by the person.
 
 ##References:
+See the code files for more references
   Database setup info and how to use: http://try.redis.io/
 
   Got version 2.8.19 of Redis from: https://github.com/MSOPENTECH/redis/releases?after=win-2.8.2101
