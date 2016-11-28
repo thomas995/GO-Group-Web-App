@@ -74,8 +74,8 @@ func loginPage(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	res.Write([]byte("Hello" + databaseUsername))
-
+	http.ServeFile(res, req, "Internal.html")
+	//res.Write([]byte("Hello" + databaseUsername))
 }
 
 func homePage(res http.ResponseWriter, req *http.Request) {
@@ -83,7 +83,6 @@ func homePage(res http.ResponseWriter, req *http.Request) {
 }
 func main() {
 	db, err = sql.Open("mysql", "b71da173aea4cf:05606ea1@tcp(eu-cdbr-azure-west-a.cloudapp.net:3306)/godatabase")
-    
 	if err != nil {
 		panic(err.Error())
 	}
@@ -97,5 +96,5 @@ func main() {
 	http.HandleFunc("/signup", signupPage)
 	http.HandleFunc("/login", loginPage)
 	http.HandleFunc("/", homePage)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8000", nil)
 }

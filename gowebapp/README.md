@@ -1,18 +1,43 @@
-Tutorial 1
-==========
+### Golang MySQL Signup Example 
 
-In this first tutorial we get up and running with a basic web server that
-serves any files in the local directory.
+#### Requires: 
 
-How to run
--------------
+* ![golang.org/x/crypto/bcrypt](https://godoc.org/golang.org/x/crypto/bcrypt)
 
-* Install Go
-    * http://golang.org/doc/install
-* Download this project from github and unzip
-    * https://github.com/jakecoffman/golang-webapp-tutorial/archive/master.zip
-* Open a command window and `cd` to the tutorial_1 directory
-* Type `go run main.go` to start the server
-* Open a web browser and go to http://localhost/
+* ![github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
 
-If you get a message that says "It works!" then it's working.
+### How To Run 
+
+Create a new database with a users table 
+
+```sql
+CREATE TABLE users(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(120)
+);
+```
+
+Go get both required packages listed below 
+
+```bash
+go get golang.org/x/crypto/bcrypt
+
+go get github.com/go-sql-driver/mysql
+```
+
+Inside of **signup.go** line **77** replace <example> with your own credentials
+
+```go
+db, err = sql.Open("mysql", "<root>:<password>@/<dbname>")
+// Replace with 
+db, err = sql.Open("mysql", "myUsername:myPassword@/myDatabase")
+```
+
+
+
+
+
+
+
+
