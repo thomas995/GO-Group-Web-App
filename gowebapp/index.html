@@ -1,0 +1,50 @@
+<!-- This page is the first thing a user will see on this website, it is accessible to a user regardless of having an
+account set up -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>WorkTracker</title>
+  <!-- Stylesheets -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- JQuery -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--Adapted from: https://www.sitepoint.com/ -->
+</head>
+<body>
+  <!-- Use Jumbotron template from Bootstrap as our look to the website -->
+<div class="jumbotron">
+<!-- Display Home Page Header -->
+    <h1>Home Page</h1>
+   <br> <h3>Hello there and welcome to WorkTracker™. Our website allows the user to categorize the work that they are currently employed in and by selecting one of the wage brackets, they are able to easily calculate their weekly wage. Once this is completed, the user can add in a comment; about the work or whatever they feel like, and then send the information in an email to their boss to look over.</h3></br> 
+</div>
+
+<!-- Create a navbar fixed to the top of the website -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<!-- Like a Stackpanel in C#, A container handles how things are formatted/spaced out -->
+      <div class="container">
+<!-- Create a NavBar Header -->
+  <div class="navbar-header">
+  <!-- Creating the NavBar styling -->
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+<!-- Using the Success button to create a green button with a Login Link on it -->
+	<button class="btn btn-success"><a href="/login">Login</a></button>
+<!-- Using the Warning button to create an Orange button with a Sign Up Link on it -->
+    <button class="btn btn-warning"><a href="/signup">Sign Up</a></button>
+	<button class="navbar-toggle collapsed">To get navbar-brand to appear</button>
+  <!-- The title of the website -->
+	<a class="navbar-brand" href="#">Work Tracker</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+  
+</form>
+          </form>
+</body>
+</html>

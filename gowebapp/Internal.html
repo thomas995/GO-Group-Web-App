@@ -1,0 +1,205 @@
+<!-- This page is only accessable to a user if they have signed up to the website with a username and password, this
+user is already stored in the database -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<h1>-</h1>
+<hr>
+<small>Welcome!</small>
+
+<html ng-app> <!-- 'ng-app'' placed within a tag (in this case, the HTML tag)
+				allows HTML to become the route element for AngularJS.
+				All AngularJS applications must have a root element. Only one instance allowed. --> 
+<head>
+	<title>WorkTracker</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--Adapted from: https://www.sitepoint.com/ -->
+  <!-- Using JavaScript -->
+  <script language="javascript">
+    // Create a Function called Calculate()
+		function Calculate()
+		{
+      //Create a variable called h which gets the values in the hoursWorked dropdownlist
+			var h = document.getElementById('hoursWorked').value;
+       //Create a variable called t which gets the values in the hourlyPay dropdownlist
+			var t = document.getElementById('hourlyPay').value;
+      // multiply h (hoursWorked) by t (hourlyPay)
+			var result = h * t;
+      //Output this result to a label
+			document.getElementById('lblRes').innerHTML = result;
+		}
+    //End the JavaScript
+	</script>
+</head>
+<body>
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <!--Changed the top header here to include a name being entered and shown back to the user with a friendly hello-->
+      <div class="container">
+        <h2><input type="text" placeholder="Your Name here" ng-model="yes"></h2>
+		      <h3><p>Hello <span ng-bind="yes"></span></p></h3>
+        <p>This is a place where you can record all of your daily duties in one place, ready to show the boss. </p>
+      </div>
+    </div>
+	<div class="container">
+		
+	</div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+                     <form method="post" action="/logout">
+    <button type="submit" class="btn btn-danger">Logout</button>
+          </button>
+          <a class="navbar-brand" href="#">Work Tracker</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+  
+</form>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+	<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Job Title</h2>
+          <!-- Dropdown list with Tradesperson's job titles
+  adapted from https://www.socketloop.com/tutorials/golang-populate-dropdown-with-html-template-example -->
+          <select>
+    <option value="Beautician">Beautician</option>
+    <option value="Builder">Builder</option>
+    <option value="Carpenter">Carpenter</option>
+    <option value="Cleaner">Cleaner</option>
+    <option value="Delivery">Delivery</option>
+    <option value="Electrician">Electrician</option>
+    <option value="Farmer">Farmer</option>
+    <option value="Gardener">Gardener</option>
+    <option value="Hair and Beauty">Hair and Beauty</option>
+    <option value="Hairdresser">Hairdresser</option>
+    <option value="Mechanic">Mechanic</option>
+    <option value="Painter">Painter</option>
+    <option value="Plumber">Plumber</option>
+    <option value="Technician">Technician</option>
+    <option value="Tiler">Tiler</option>
+    <option value="Transport">Transport</option>
+    <option value="Other">Other</option>
+ <!-- Code adapted from http://stackoverflow.com/questions/30717105/adding-view-details-button-with-js -->
+  </select>
+  <!-- Allows you to see more information about the dropdown list -->
+          <details>
+    <summary>View Details</summary>
+    <p>
+        Please select your correct job title here from the dropdown list.
+    </p>
+</details>
+</div>
+
+<!-- Code adapted from http://www.w3schools.com/html/html_form_elements.asp -->
+  <div class="col-md-4">
+     <!-- Dropdown list with Tradesperson's hours worked that week, min 10 max 40 -->
+     <h2>Wage earned this Week</h2>
+  <select Id="hoursWorked" onChange="Calculate();">
+			  <option value=10>10</option>
+			  <option value=11>11</option>
+			  <option value=12>12</option>
+			  <option value=13>13</option>
+			  <option value=14>14</option>
+			  <option value=15>15</option>
+			  <option value=16>16</option>
+			  <option value=17>17</option>
+			  <option value=18>18</option>
+			  <option value=19>19</option>
+			  <option value=20>20</option>
+			  <option value=21>21</option>
+			  <option value=22>22</option>
+			  <option value=23>23</option>
+			  <option value=24>24</option>
+			  <option value=25>25</option>
+			  <option value=26>26</option>
+			  <option value=27>27</option>
+			  <option value=28>28</option>
+			  <option value=29>29</option>
+			  <option value=30>30</option>
+			  <option value=31>31</option>
+			  <option value=32>32</option>
+			  <option value=33>33</option>
+			  <option value=34>34</option>
+			  <option value=35>35</option>
+			  <option value=36>36</option>
+			  <option value=37>37</option>
+			  <option value=38>38</option>
+			  <option value=39>39</option>
+			  <option value=40>40</option>
+
+			</select>
+
+      <!-- See function in header, it calculates hourly pay that the worker receives  -->
+			  &nbsp;&nbsp;
+			* &nbsp;
+			Hourly Pay:
+			<select Id="hourlyPay" onChange="Calculate();">
+        <!-- This dropdown list contains the pay rates that are multiplied by the hours worked by the Tradesperson
+         within the calculation in the header above -->
+			  <option value=6.24>6.24</option>
+			  <option value=7.25>7.25</option>
+			  <option value=9.15>9.15</option>
+			  <option value=11.25>11.25</option>
+			  <option value=20.83>20.83</option>
+			</select>
+      <!-- Just inserts a few spaces -->
+			&nbsp;&nbsp;
+			
+			= Total:&nbsp;&nbsp;
+      <!-- label -->
+			<label id="lblRes"> <!-- result of Calculating hoursWorked * hourlyPay -->
+			 62.40
+			</label>
+
+          <details>
+    <summary>View Details</summary>
+    <p>
+        Please select the correct amount of hours you worked this week. 
+        <br> Please note: In order to use this site you have to be working a minimum of 10 hours a week and a maximum of 40 hours. </br>
+
+          </p>
+</details>
+       </div>
+
+<!-- A textbox which the user can enter into to tell their boss any additional information about their week's work -->
+        <div class="col-md-4">
+          <h2>Additonal Information</h2>
+          <!--Adapted from http://www.w3schools.com/tags/tag_input.asp-->
+          <!-- A form action to submit all of the details given on the form -->
+          <form action="demo_form.asp">
+              <input type="text" name="AddInfo" value=""><br>
+              <input type="submit" value="Submit">
+</form>
+<details>
+    <summary>View Details</summary>
+    <p>
+        Please add any additional information that you feel is relevent for your boss to know about regarding this week's work.
+    </p>
+</details>
+        </div>
+      </div>
+
+	  <hr>
+
+    <!-- Just including a Company trademark in the footer -->
+      <footer>
+        <p>&copy; 2016 WorkTracker, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+    <!-- To use AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+</body>
+</html>
