@@ -5,9 +5,9 @@
 ## Work Tracker
 
 # Description
-This project will be using GO programming language to create a Web Application that tracks the amount of work done by specific Tradesmen. For Example, if I was a farmer and I wanted to tell my boss the amount of work I had done and details about that work I would use this application to login with my personal details, pick my job from a dropdown list and a few other specific details and then I will enter the details into a textbox and submit it to my boss. All work done would be tracked on my specific account and the same goes for other accounts.
+This project will be using GO programming language to create a Web Application that tracks the amount of work done by specific Tradesmen. For Example, if I was a farmer and I wanted to tell my boss the amount of work I had done and details about that work I would use this application to log in with my personal details, pick my job from a dropdown list and a few other specific details and then I will enter the details into a textbox and submit it to my boss. All work done would be tracked on my specific account and the same goes for other accounts.
 
-The main aim is for the Tradesman to have to do the minimal amount of work to use this app as it shouldn't be a hassle to use (many tradesmen are not tech-savvy so we need to avoid confusion). The use of dropdown lists/radio buttons/forms should acheive this as opposed to data entry into textboxes by the person.
+The main aim is for the Tradesman to have to do the minimal amount of work to use this app as it shouldn't be a hassle to use (many tradesmen are not tech-savvy so we need to avoid confusion). The use of dropdown lists/radio buttons/forms should achieve this as opposed to data entry into textboxes by the person.
 
 Go to the wiki section for more info on how to use this app.
 
@@ -25,7 +25,7 @@ See the code files for more references
 
   Bootstrap Template: http://getbootstrap.com/examples/jumbotron/#
   
-  Angular tutorial: https://github.com/jakecoffman/go-angular-tutorial
+  Angular Tutorial: https://github.com/jakecoffman/go-angular-tutorial
   
   Login/Logout function: https://mschoebel.info/2014/03/09/snippet-golang-webapp-login-logout/
   
